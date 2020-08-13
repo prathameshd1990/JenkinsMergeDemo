@@ -4,47 +4,36 @@ agent any
 
 stages
 {
-stage('Build')
-{
-steps
-{
+stage('Build'){
+steps{
 bat "mvn clean"
 }
 }
-stage('Deploy')
-{
-steps
-{
+
+stage('Deploy'){
+steps{
 echo 'deploying the code'
 }
 }
-stage('test')
-{
-steps
-{
-bat "mvn test"
-}
-}
-stage('Unit Testing')
-{
-steps
-{
-bat "mvn test"
-}
-}
-stage('Release')
-{
-steps
-{
+
+stage('test'){
+steps{
 bat "mvn test"
 }
 }
 
+stage('Unit Testing'){
+steps{
+bat "mvn test"
 }
 }
 
-
-
-
+stage('Release'){
+steps{
+bat "mvn test"
+}
+}
 
 }
+}
+
